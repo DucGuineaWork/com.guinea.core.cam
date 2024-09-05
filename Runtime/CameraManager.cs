@@ -11,9 +11,9 @@ namespace Guinea.Core.Cam
                 return s_mainCamera;
             }
         }
-        public static SetMainCamera(Camera camera)
+        public static void SetMainCamera(Camera camera)
         {
-            s_mainCamera = camera
+            s_mainCamera = camera;
         }
 
         public static bool WorldToCanvasPosition(Vector3 worldPosition, RectTransform rect, out Vector2 localPoint, Camera cam = null)
