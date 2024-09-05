@@ -18,7 +18,7 @@ namespace Guinea.Core.Cam
 
         public static bool WorldToCanvasPosition(Vector3 worldPosition, RectTransform rect, out Vector2 localPoint, Camera cam = null)
         {
-            Vector3 screenPosition = s_mainCamera.WorldToScreenPoint(worldPosition);
+            Vector3 screenPosition = Main.WorldToScreenPoint(worldPosition);
             return RectTransformUtility.ScreenPointToLocalPointInRectangle(
             rect,
             screenPosition,
