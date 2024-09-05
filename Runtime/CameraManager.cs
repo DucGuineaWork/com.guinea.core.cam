@@ -4,19 +4,13 @@ namespace Guinea.Core.Cam
 {
     public class CameraManager: MonoBehaviour
     {
-        [SerializeField]bool m_setMainCameraAtStart;
         private static Camera s_mainCamera;
-
-        public static Camera Main=> s_mainCamera;
-
-        void Start()
-        {
-            if(m_setMainCameraAtStart)
-            {
-                s_mainCamera = Camera.main;
+        public static Camera Main{
+            get{
+                s_mainCamera = s_mainCamera ?? Camera.main;
+                return s_mainCamera;
             }
         }
-
         public static SetMainCamera(Camera camera)
         {
             s_mainCamera = camera
